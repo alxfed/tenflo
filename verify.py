@@ -6,6 +6,7 @@
 
 def main():
     # print(tf.reduce_sum(tf.random.normal([1000, 1000])))
+    print('ok')
     return
 
 
