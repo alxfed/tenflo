@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 """https://www.tensorflow.org/install/docker
 """
-# import tensorflow as tf
+import os
+os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
+
+import tensorflow as tf
 
 
 def main():
