@@ -8,20 +8,20 @@ from tensorflow.keras.layers import Dense, Flatten, Conv2D
 from tensorflow.keras import Model
 
 
-# Build the tf.keras model using the Keras model subclassing API:
-class MyModel(Model):
-  def __init__(self):
-    super(MyModel, self).__init__()
-    self.conv1 = Conv2D(32, 3, activation='relu')
-    self.flatten = Flatten()
-    self.d1 = Dense(128, activation='relu')
-    self.d2 = Dense(10)
+# Build the tf.keras model using the Keras model subclassing API: https://www.tensorflow.org/api_docs/python/tf/keras/Model
+class ThisModel(Model):
+    def __init__(self):
+        super(ThisModel, self).__init__()
+        self.conv1 = Conv2D(32, 3, activation='relu')
+        self.flatten = Flatten()
+        self.d1 = Dense(128, activation='relu')
+        self.d2 = Dense(10)
 
-  def call(self, x):
-    x = self.conv1(x)
-    x = self.flatten(x)
-    x = self.d1(x)
-    return self.d2(x)
+    def call(self, inputs):
+        x = self.conv1(inputs)
+        x = self.flatten(x)
+        x = self.d1(x)
+        return self.d2(x)
 
 
 def main():
@@ -41,7 +41,7 @@ def main():
     test_ds = tf.data.Dataset.from_tensor_slices((x_test, y_test)).batch(32)
 
     # Create an instance of the model
-    model = MyModel()
+    model = ThisModel()
 
     # Choose an optimizer and loss function
     loss_object = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
