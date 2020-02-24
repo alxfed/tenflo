@@ -69,6 +69,17 @@ def main():
         train_loss(loss)
         train_accuracy(labels, predictions)
 
+    # Test model
+    @tf.function
+    def test_step(images, labels):
+        # training=False is only needed if there are layers with different
+        # behavior during training versus inference (e.g. Dropout).
+        predictions = model(images, training=False)
+        t_loss = loss_object(labels, predictions)
+
+        test_loss(t_loss)
+        test_accuracy(labels, predictions)
+
     # And now...
     EPOCHS = 5
 
