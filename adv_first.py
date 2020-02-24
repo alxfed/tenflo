@@ -31,8 +31,8 @@ def main():
     x_train, x_test = x_train / 255.0, x_test / 255.0
 
     # Add a channels dimension
-    x_train = x_train[..., tf.newaxis]
-    x_test = x_test[..., tf.newaxis]
+    x_train = x_train[..., tf.newaxis] # ... means: as many ':' as needed.
+    x_test = x_test[..., tf.newaxis] # The ellipsis is used in numpy to slice higher-dimensional data structures.
 
     # Use tf.data to batch and shuffle the dataset:
     train_ds = tf.data.Dataset.from_tensor_slices(
