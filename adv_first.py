@@ -26,6 +26,7 @@ class ThisModel(Model):
 
 def main():
     # load and prepare the dataset
+    print(tf.config.experimental.list_physical_devices())
     mnist = tf.keras.datasets.mnist
     (x_train, y_train), (x_test, y_test) = mnist.load_data()
     x_train, x_test = x_train / 255.0, x_test / 255.0
