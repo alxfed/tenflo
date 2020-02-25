@@ -27,10 +27,12 @@ with tf.Session() as sess:
 
 def main():
     # same in tf 2.x
+    print(tf.__version__)
+
     W = tf.Variable(tf.ones(shape=(2, 2)), name="W")
     b = tf.Variable(tf.zeros(shape=(2)), name="b")
 
-    @tf.function
+    @tf.function    # decorator compiles the function to a graph
     def forward(x):
         return W * x + b
 
