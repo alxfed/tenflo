@@ -26,9 +26,8 @@ with tf.Session() as sess:
 '''
 
 def main():
-    # same in tf 2.x
+    # all the same in tf 2.x
     print(tf.keras.__version__)
-
 
     W = tf.Variable(tf.ones(shape=(2, 2)), name="W")
     b = tf.Variable(tf.zeros(shape=(2)), name="b")
