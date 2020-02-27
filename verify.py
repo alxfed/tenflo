@@ -10,6 +10,8 @@ import tensorflow as tf
 
 def main():
     # print(tf.reduce_sum(tf.random.normal([1000, 1000])))
+    print(tf.__version__)
+    print(tf.config.experimental.list_physical_devices())
     print('ok')
     return
 
