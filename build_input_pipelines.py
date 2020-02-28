@@ -2,7 +2,7 @@
 """https://www.tensorflow.org/guide/data
 """
 from __future__ import absolute_import, division, print_function, unicode_literals
-import pathlib
+import pathlib                  # https://docs.python.org/3/library/pathlib.html
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
@@ -26,6 +26,9 @@ def main():
     # dataset is iterable
     for elem in dataset:
         print(elem.numpy())
+    # or by creating an iterator and using next
+    it = iter(dataset)
+    print(next(it).numpy())
     return
 
 
