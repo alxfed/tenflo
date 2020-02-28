@@ -29,6 +29,16 @@ def main():
     # or by creating an iterator and using next
     it = iter(dataset)
     print(next(it).numpy())
+
+    b = tf.ones(shape=(2, 2))
+    print(b.device)
+
+    satadet = tf.data.Dataset.from_tensors([b, tf.zeros(shape=(2, 2))])
+    # not iterable
+    # for el in satadet:
+    #     print(el.numpy())
+    it = iter(satadet)
+    print(next(it).numpy())
     return
 
 
