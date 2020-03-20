@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""...
+"""https://github.com/jruizgit/rules
 """
 from durable.lang import *
 
